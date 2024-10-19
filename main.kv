@@ -1,0 +1,884 @@
+#*************************Forgot********************
+<Forget>:
+    name: "Forget"
+    email_forget:email_forget
+
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "images/cassava.jpg"
+
+    Label:
+        text: "Detect  Cassava  Disease  Leaf"
+        font_name: "linus.ttf"
+        font_size: sp(47)
+        size_hint: None, None
+        color: 0, 0, 0, 1
+        bold: True
+        italic: True
+        pos_hint: {'center_x': .5, 'center_y': .9}
+
+    BoxLayout:
+        orientation: 'vertical'
+        background_color: (0, 0, 0, .6)
+        canvas.before:
+            Color:
+                rgba: self.background_color
+            Rectangle:
+                size: sp(600), sp(300)
+                pos: sp(100), sp(80)
+
+        # canvas.after:
+        #     Color:
+        #         rgba: 0, 1, 1, 1
+        #     Line:
+        #         width: sp(3)
+        #         rectangle: sp(100), sp(80),sp(600), sp(300)
+
+    Label:
+        text: "Reset   PassWord"
+        font_name: "linus.ttf"
+        size_hint: None, None
+        font_size: sp(40)
+        color: 1, 1, 1, 1
+        boid: True
+        pos_hint: {'center_x': .5, 'center_y': .68}
+
+    Label:
+        text: "Email: "
+        color: 1, 0, 0
+        bold: True
+        font_size: '25sp'
+        size_hint: None, None
+        pos_hint: {'center_x': .3, 'center_y': .5}
+        outline_color: 1, 1, 1, 1
+        outline_width: sp(2)
+
+    TextInput:
+        id: email_forget
+        focus: True
+        multiline: False
+        font_size: '29sp'
+        hint_text: 'enter the Email'
+        size_hint: None, None
+        pos_hint: {'center_x': .6, 'center_y': .5}
+        width: sp(300)
+        height: sp(50)
+        background_color: (255, 255, 255, .7)
+
+    Button:
+        size_hint: .13, .09
+        pos_hint: {'center_x': .64, 'center_y': .23}
+        background_color: 1, 1, 1, 0
+
+        on_release:
+            root.manager.transition.direction = "left"
+            root.forget()
+        Image:
+            source: "images/button_reset-password.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+
+    Button:
+        size_hint: .13, .09
+        pos_hint: {'center_x': .35, 'center_y': .23}
+        background_color: 1, 1, 1, 0
+
+        on_release:
+            root.manager.transition.direction = "left"
+            root.manager.current ="UI"
+        Image:
+            source: "images/button_back.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+#****************new
+<Newpw>:
+    name: "Newpw"
+
+    ti1fg:ti1fg
+    ti2fg:ti2fg
+
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "images/cassava.jpg"
+    Label:
+        text: "Detect  Cassava  Disease  Leaf"
+        font_name: "linus.ttf"
+        font_size: sp(47)
+        size_hint: None, None
+        color: 0, 0, 0, 1
+        bold: True
+        italic: True
+        pos_hint: {'center_x': .5, 'center_y': .9}
+
+    BoxLayout:
+        orientation: 'vertical'
+        background_color: (0, 0, 0, .6)
+        canvas.before:
+            Color:
+                rgba: self.background_color
+            Rectangle:
+                size: sp(600), sp(300)
+                pos: sp(100), sp(80)
+    Label:
+        text: "Reset   PassWord"
+        font_name: "linus.ttf"
+        size_hint: None, None
+        font_size: sp(40)
+        color: 1, 1, 1, 1
+        boid: True
+        pos_hint: {'center_x': .5, 'center_y': .68}
+
+    Label:
+        text: "New Password: "
+        color: 1, 0, 0
+        bold: True
+        font_size: '25sp'
+        size_hint: None, None
+        pos_hint: {'center_x': .3, 'center_y': .55}
+        outline_color: 1, 1, 1, 1
+        outline_width: sp(2)
+
+    TextInput:
+        id:ti1fg
+        multiline: False
+        font_size: '29sp'
+        hint_text: 'enter the password'
+        password: True
+        size_hint: None, None
+        pos_hint: {'center_x': .6, 'center_y': .55}
+        width: sp(300)
+        height: sp(50)
+        background_color: (255, 255, 255, .7)
+
+    Label:
+        text: "re-enter Password: "
+        color: 1, 0, 0
+        bold: True
+        font_size: '25sp'
+        size_hint: None, None
+        pos_hint: {'center_x': .275, 'center_y': .4}
+        outline_color: 1, 1, 1, 1
+        outline_width: sp(2)
+
+    TextInput:
+        id:ti2fg
+        multiline: False
+        font_size: '29sp'
+        hint_text: 'enter the password'
+        password: True
+        size_hint: None, None
+        pos_hint: {'center_x': .6, 'center_y': .4}
+        width: sp(300)
+        height: sp(50)
+        background_color: (255, 255, 255, .7)
+
+    Button:
+        size_hint: .13, .09
+        pos_hint: {'center_x': .64, 'center_y': .23}
+        background_color: 1, 1, 1, 0
+
+        on_release:
+            root.resetpw()
+        Image:
+            source: "images/button_reset-password.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+
+    Button:
+        size_hint: .13, .09
+        pos_hint: {'center_x': .35, 'center_y': .23}
+        background_color: 1, 1, 1, 0
+
+        on_release:
+            root.manager.transition.direction = "left"
+            root.manager.current ="Forget"
+        Image:
+            source: "images/button_back.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+#*************************register********************
+<Register>:
+    name: "register"
+
+    fullname:fullname
+    email:email
+    password:password
+    usernamee:usernamee
+
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "images/cassava.jpg"
+    Label:
+        text: "Detect  Cassava  Disease  Leaf"
+        font_name: "linus.ttf"
+        font_size: sp(47)
+        size_hint: None, None
+        color: 0, 0, 0, 1
+        bold: True
+        italic: True
+        pos_hint: {'center_x': .5, 'center_y': .9}
+
+    BoxLayout:
+        orientation: 'vertical'
+        background_color: (0, 0, 0, .6)
+
+        canvas.before:
+            Color:
+                rgba: self.background_color
+            Rectangle:
+                size: sp(600), sp(380)
+                pos: sp(100), sp(30)
+
+    Button:
+        size_hint: .13, .09
+        pos_hint: {'center_x': .38, 'center_y': .13}
+        background_color: 1, 1, 1, 0
+
+        on_release:
+            root.manager.transition.direction = "left"
+            root.manager.current ="UI"
+            root.register()
+        Image:
+            source: "images/button_register.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+
+    Button:
+        size_hint: .13, .09
+        pos_hint: {'center_x': .64, 'center_y': .13}
+        background_color: 1, 1, 1, 0
+
+        on_release:
+            root.manager.transition.direction = "left"
+            root.manager.current ="UI"
+        Image:
+            source: "images/button_back.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+
+    Label:
+        text: "Register"
+        font_name: "linus.ttf"
+        size_hint: None, None
+        font_size: sp(40)
+        color: 1, 1, 1, 1
+        boid: True
+        pos_hint: {'center_x': .5, 'center_y': .77}
+
+    Label:
+        text: "Full name: "
+        color: 1, 0, 0
+        bold: True
+        font_size: '25sp'
+        size_hint: None, None
+        pos_hint: {'center_x': .3, 'center_y': .65}
+        outline_color: 1, 1, 1, 1
+        outline_width: sp(2)
+
+    TextInput:
+        id: fullname
+        multiline: False
+        font_size: '29sp'
+        hint_text: 'enter the name'
+        size_hint: None, None
+        pos_hint: {'center_x': .6, 'center_y': .65}
+        width: sp(300)
+        height: sp(50)
+        background_color: (255, 255, 255, .65)
+
+    Label:
+        text: "Email: "
+        color: 1, 0, 0
+        bold: True
+        font_size: '25sp'
+        size_hint: None, None
+        pos_hint: {'center_x': .3, 'center_y': .53}
+        outline_color: 1, 1, 1, 1
+        outline_width: sp(2)
+
+    TextInput:
+        id: email
+        multiline: False
+        font_size: '29sp'
+        hint_text: 'enter the email'
+        size_hint: None, None
+        pos_hint: {'center_x': .6, 'center_y': .53}
+        width: sp(300)
+        height: sp(50)
+        background_color: (255, 255, 255, .7)
+
+    Label:
+        text: "User Name: "
+        color: 1, 0, 0
+        bold: True
+        font_size: '25sp'
+        size_hint: None, None
+        pos_hint: {'center_x': .3, 'center_y': .41}
+        width: sp(300)
+        height: sp(50)
+        background_color: (255, 255, 255, .7)
+        outline_color: 1, 1, 1, 1
+        outline_width: sp(2)
+
+    TextInput:
+        id: usernamee
+        multiline: False
+        font_size: '29sp'
+        hint_text: 'enter the username'
+        size_hint: None, None
+        pos_hint: {'center_x': .6, 'center_y': .41}
+        width: sp(300)
+        height: sp(50)
+        background_color: (255, 255, 255, .7)
+
+    Label:
+        text: "Password: "
+        color: 1, 0, 0
+        bold: True
+        font_size: '25sp'
+        size_hint: None, None
+        pos_hint: {'center_x': .3, 'center_y': .29}
+        outline_color: 1, 1, 1, 1
+        outline_width: sp(2)
+
+    TextInput:
+        id: password
+        multiline: False
+        font_size: '29sp'
+        hint_text: 'enter the password'
+        password: True
+        size_hint: None, None
+        pos_hint: {'center_x': .6, 'center_y': .29}
+        width: sp(300)
+        height: sp(50)
+        background_color: (255, 255, 255, .7)
+
+#*************************login********************
+<UserInterface>:
+    name: "UI"
+
+    username:username
+    password:password
+
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: "images/cassava.jpg"
+
+    BoxLayout:
+        orientation: 'vertical'
+        background_color: (0, 0, 0, .6)
+
+        canvas.before:
+            Color:
+                rgba: self.background_color
+            Rectangle:
+                size: sp(600), sp(350)
+                pos: sp(100), sp(30)
+
+    Label:
+        text: "Detect  Cassava  Disease  Leaf"
+        font_name: "linus.ttf"
+        font_size: sp(47)
+        size_hint: None, None
+        color: 0, 0, 0, 1
+        bold: True
+        italic: True
+        pos_hint: {'center_x': .5, 'center_y': .9}
+
+    Label:
+        text: "Log in"
+        font_name: "linus.ttf"
+        size_hint: None, None
+        font_size: sp(40)
+        color: 1, 1, 1, 1
+        boid: True
+        pos_hint: {'center_x': .5, 'center_y': .68}
+
+    Label:
+        text: "Do you have a account?"
+        font_size: sp(20)
+        size_hint: None, None
+        color: 1, 1, 1, 1
+        italic: True
+        bold: True
+        pos_hint: {'center_x': .45, 'center_y': .25}
+
+    Button:
+        size_hint: .13, .09
+        pos_hint: {'center_x': .65, 'center_y': .25}
+        background_color: 1, 1, 1, 0
+        on_release:
+            root.register()
+            root.manager.current ="register"
+            root.manager.transition.direction = "right"
+        Image:
+            source: "images/button_register.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+
+    Button:
+        size_hint: .13, .09
+        pos_hint: {'center_x': .5, 'center_y': .1}
+        background_color: 1, 1, 1, 0
+
+        on_release:
+            root.login()
+
+        Image:
+            source: "images/button_log-in.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+
+    Button:
+        text: "Forgot PassWord?"
+        size_hint: .13, .09
+        bold: True
+        italic: True
+        pos_hint: {'center_x': .5, 'center_y': .17}
+        background_color: 1, 1, 1, 0
+
+        on_release:
+            root.manager.current = "Forget"
+            root.manager.transition.direction = "left"
+
+    Label:
+        text: "user name: "
+        color: 1, 0, 0
+        bold: True
+        font_size: '25sp'
+        size_hint: None, None
+        pos_hint: {'center_x': .3, 'center_y': .55}
+        outline_color: 1, 1, 1, 1
+        outline_width: sp(2)
+
+    TextInput:
+        id: username
+        # text: "admin"
+        focus: True
+        multiline: False
+        font_size: '29sp'
+        hint_text: 'enter the username'
+        size_hint: None, None
+        pos_hint: {'center_x': .6, 'center_y': .55}
+        width: sp(300)
+        height: sp(50)
+        background_color: (255, 255, 255, .7)
+
+    Label:
+        text: "Password: "
+        color: 1, 0, 0
+        bold: True
+        font_size: '25sp'
+        size_hint: None, None
+        pos_hint: {'center_x': .3, 'center_y': .4}
+        outline_color: 1, 1, 1, 1
+        outline_width: sp(2)
+
+    TextInput:
+        id: password
+        # text: "12345"
+        multiline: False
+        font_size: '29sp'
+        hint_text: 'enter the password'
+        password: True
+        size_hint: None, None
+        pos_hint: {'center_x': .6, 'center_y': .4}
+        width: sp(300)
+        height: sp(50)
+        background_color: (255, 255, 255, .7)
+
+
+#**********************enter img*****************
+<Page1_take_a_picture>:
+    name: "page1"
+    camera: camera
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: ('100sp', '100sp', '100sp', '100sp')
+        Camera:
+            id: camera
+            resolution: 1920, 1080
+            play: True
+
+#**********
+    Button:
+        size_hint: .13, .06
+        pos_hint: {'center_x': .5, 'center_y': .15}
+        background_color: 1, 1, 1, 0
+        on_press:
+            root.capture()
+            root.manager.transition.direction = "left"
+        Image:
+            source: "images/button_diagnose1.png"
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+
+    Button:
+        text: "Log Out"
+        bold: True
+        italic: True
+        pos_hint:{"x":0.9, "y": 0.9}
+        size_hint: 0.1, 0.1
+        color: 1, 0, 0
+        background_color: 1, 1, 1, 0
+        on_release:
+            app.root.current = "UI"
+            root.manager.transition.direction = "right"
+
+#**************************bệnh*************************
+<CBB>:
+    name: "CBB"
+
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+        GridLayout:
+            cols: 1
+            spacing: 10
+            padding: ('10sp', '40sp', '10sp', '10sp')
+            size_hint: 1, None
+            height: self.minimum_height
+            Label:
+                markup: True
+                text: "Cassava  Bacterial  Blight"
+                size_hint: .2, .2
+                pos_hint: {'center_x': .5, 'center_y': .9}
+                font_name: 'linus.ttf'
+                font_size: '50sp'
+                background_color: 1, 1, 0, 1
+            Label:
+                markup: True
+                text: "\n\n\n[color=#00FF00][b][i] Cassava Bacterial Blight(CBB): [/b][/i][/color]Bacterial blight of cassava or scientist call Xanthomonas axonopodis pv. manihotis. The illness, which was first identified in Brazil in 1912, has followed cassava farming all over the world. Bacterial blight is the disease that affects cassava the most throughout the world, in terms of yield losses.\n\n [color=#00FF00][b][i]Hosts and symptoms: [/b][/i][/color] The majority of the plants in the genus Manihot are susceptible to infection by Xanthomonas axonopodis PV. Maniatis. With roughly 100 species, the extensively cultivated woody shrub Manihot esculenta, sometimes known as the cassava plant, is without a doubt the most economically significant species. The symptoms of cassava differ in a way that is specific to this infection. Blight, wilting, dieback, and vascular necrosis are among the symptoms. Angled necrotic patches on the leaves, frequently surrounded by a chlorotic ring, are a more distinguishing sign of X. axonopodis infection in cassava. These lesions start as recognizable damp, brown lesions that are typically restricted to the plant's base before they expand and consolidate, frequently killing the entire leaf. \n\n [color=#00FF00][b][i]Disease cycle: [/b][/i][/color] A vascular and foliar pathogenic species of bacteria is called Xanthomonas axonopodis PV. Maniatis. Typically, it penetrates the host plant by hydathodes or stomatal holes. Another method of entry has been identified as wounds to stems. Once inside its host, X. axonopodis breaks down the plant's vascular system's defenses enzymatically to start an infection that spreads throughout the entire plant. This pathogen prefers to feed on younger tissues and frequently follows xylem vessels into developing buds and seeds because its enzymes cannot break down heavily lignified cell walls. Although experiments have revealed that a large portion of infected seeds is asymptomatic carriers, seeds that have been invaded by a significant number of bacteria are occasionally malformed and necrotic. Although Xanthomonas axonopodis PV. Manihot is a poor survival in soil, it has been demonstrated that it can survive asymptomatically in moist environments for up to thirty months without developing new host tissue. Infected seeds and infected clippings that are put in fields as clones carry the infection from one growing season to the next. Once one cassava plant is affected, rain splash, contaminated cultivation equipment, and foot traffic put the entire crop in danger of infection. These are efficient transmission techniques because they result in lesions on healthy cassava plants, which serve as entry points for X. axonopodis. \n\n [color=#00FF00][b][i]Treatment: [/b][/i][/color] The common remedy of farmers when detecting disease, they will cut the diseased plants, or spray pesticides, etc... However, these are infectious virus strains, so it is not guaranteed that the disease will be eliminated. So call for help when the common ways are not feasible to how agricultural engineers, botanists, etc.\n\n"
+                multiline: True
+                size_hint_y: None
+                text_size: self.width - sp(10), None
+                height: self.texture_size[1]
+
+    Button:
+        text: "exit"
+        pos_hint: {'right': 1,'below': 0.1}
+        size_hint: .13, .07
+        background_color: 1, 1, 1, 0
+        on_release:
+            root.close()
+
+        Image:
+            source: "images/button_exit.png"
+            allow_stretch: False
+            keep_ratio: False
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+
+    Button:
+        text: "back"
+        size_hint: .13, .07
+        pos_hint: {'right': 0.13,'below': 1}
+        background_color: 1, 1, 1, 0
+        on_release:
+            root.manager.current = "page1"
+            root.manager.transition.direction = "right"
+
+        Image:
+            source: "images/button_back1.png"
+            allow_stretch: False
+            keep_ratio: False
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+
+
+    Button:
+        text: "Log Out"
+        bold: True
+        italic: True
+        pos_hint:{"x":0.9, "y": 0.9}
+        size_hint: 0.1, 0.1
+        color: 1, 0, 0
+        background_color: 1, 1, 1, 0
+        on_release:
+            app.root.current = "UI"
+            root.manager.transition.direction = "right"
+
+
+<CBDS>:
+    name: "CBDS"
+
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+        GridLayout:
+            cols: 1
+            spacing: 10
+            padding: ('10sp', '40sp', '10sp', '10sp')
+            size_hint: 1, None
+            height: self.minimum_height
+            Label:
+                markup: True
+                text: "Cassava  Brown  Streak  Disease"
+                size_hint: .2, .2
+                pos_hint: {'center_x': .5, 'center_y': .9}
+                font_name: 'linus.ttf'
+                font_size: '50sp'
+                background_color: 1, 1, 0, 1
+            Label:
+                markup: True
+                text: "\n\n\n[color=#00FF00][b][i] Cassava brown streak disease (CBSD): [/b][/i][/color]is a severe virus disease of cassava and prevalent in the eastern regions of Africa. The disease is characterized by distinct vein chlorosis and streak symptoms on leaves and stems and necrosis of storage roots.\n\n [color=#00FF00][b][i]Hosts and symptoms: [/b][/i][/color]Severe chlorosis and necrosis on infected leaves give them a yellowish, mottled appearance, which is a hallmark of CBSD. Chlorosis may occur in blotches that are not attached to veins or it may be connected to the veins, including the mid vein, secondary vein, and tertiary vein. Depending on a multitude of variables, leaf symptoms might vary substantially. These variations are caused by the virus type, plant age, and growing conditions (such as altitude and rainfall volume). The cassava plant's stems may have brown streaks. Additionally, the cassava tuber can develop a dry brown-black necrotic rot that can spread from a small lesion to the entire root. Finally, tuber rot can cause the roots to tighten, which can restrict growth. Typically, not all of these traits are present in the damaged plants, although those who are seriously impacted might. Because leaves are asymptomatic, farmers may not be aware of their infected cassava crops until they are harvested and discover the tuber lesions. Another cassava virus, the cassava mosaic virus (CMV), also causes more pronounced foliar symptoms than CBSD. \n\n [color=#00FF00][b][i]Disease cycle: [/b][/i][/color]The adult B. tabaci (the silver leaf whitefly) lives an average of sixteen days, and the maturation process from egg to adult is thirty days. Eggs may be deposited haphazardly or in a spiral fashion on the leaf undersides. Both juvenile and adult whiteflies feed on the phloem of the leaves by inserting a sucker mouth part into the leaf, thereby transmitting the virus to the plant. Saliva containing toxins is also injected into the cassava plant while whiteflies feed, disturbing plant growth and ultimately reducing yield. Seedlings are particularly affected. \n\n [color=#00FF00][b][i]Treatment: [/b][/i][/color]The common remedy of farmers when detecting disease, they will cut the diseased plants, or spray pesticides, etc... However, these are infectious virus strains, so it is not guaranteed that the disease will be eliminated. So call for help when the common ways are not feasible to how agricultural engineers, botanists, etc.\n\n"
+                multiline: True
+                size_hint_y: None
+                text_size: self.width - sp(10), None
+                height: self.texture_size[1]
+    Button:
+        text: "exit"
+        pos_hint: {'right': 1,'below': 0.1}
+        size_hint: .13, .07
+        background_color: 1, 1, 1, 0
+        on_release:
+            root.close()
+
+        Image:
+            source: "images/button_exit.png"
+            allow_stretch: False
+            keep_ratio: False
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+
+    Button:
+        text: "back"
+        size_hint: .13, .07
+        pos_hint: {'right': 0.13,'below': 1}
+        background_color: 1, 1, 1, 0
+        on_release:
+            root.manager.current = "page1"
+            root.manager.transition.direction = "right"
+
+        Image:
+            source: "images/button_back1.png"
+            allow_stretch: False
+            keep_ratio: False
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+
+    Button:
+        text: "Log Out"
+        bold: True
+        italic: True
+        pos_hint:{"x":0.9, "y": 0.9}
+        size_hint: 0.1, 0.1
+        color: 1, 0, 0
+        background_color: 1, 1, 1, 0
+        on_release:
+            app.root.current = "UI"
+            root.manager.transition.direction = "right"
+
+<CGM>:
+    name: "CGM"
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+        GridLayout:
+            cols: 1
+            spacing: 10
+            padding: ('10sp', '40sp', '10sp', '10sp')
+            size_hint: 1, None
+            height: self.minimum_height
+            Label:
+                markup: True
+                text: "Cassava  Green  Mottle"
+                size_hint: .2, .2
+                pos_hint: {'center_x': .5, 'center_y': .9}
+                font_name: 'linus.ttf'
+                font_size: '50sp'
+                background_color: 1, 1, 0, 1
+            Label:
+                markup: True
+                text: "\n\n\n[color=#00FF00][b][i] Cassava Green Mottle(CGM): [/b][/i][/color]The Secoviridae family of plant pathogenic viruses includes the cassava green mottle virus (CGMV). Secoviridae family whose member genuses are Comovirus, Fabavirus, and Nepovirus.. Each member of the family can infect plants, and depending on the virus and genus under consideration, the host range and symptoms can differ. \n\n [color=#00FF00][b][i]Hosts and symptoms: [/b][/i][/color]A sap-transmissible virus discovered in cassava with the green mottle disease spread easily through seeds in Nicotiana clevelandii and was spread to 30 species in 12 plant families. The first systemically infected leaves on cassava plants infected by sap inoculation developed a mottle with partial necrosis, but leaves produced later were symptomless yet carried the virus. Most other species experienced systemic mottle or necrosis along with localized chlorotic or necrotic lesions. In other species, this was followed by the development of small, symptomless virus-carrying leaves.\n\n [color=#00FF00][b][i]Disease cycle: [/b][/i][/color]The plant-infecting Secoviridae family of viruses forms part of the Picornavirales order, an important group of non-enveloped viruses that infect vertebrates, arthropods, plants and algae. The impact of the secovirids on cultivated crops is significant, infecting a wide range of plants from grapevine to rice. The overwhelming majority are transmitted by ecdysozoan vectors such as nematodes, beetles and aphids.\n\n [color=#00FF00][b][i]Treatment: [/b][/i][/color]The common remedy of farmers when detecting disease, they will cut the diseased plants, or spray pesticides, etc...However, these are infectious virus strains, so it is not guaranteed that the disease will be eliminated. So call for help when the common ways are not feasible to how agricultural engineers, botanists, etc.\n\n"
+                multiline: True
+                size_hint_y: None
+                text_size: self.width - sp(10), None
+                height: self.texture_size[1]
+    Button:
+        text: "exit"
+        pos_hint: {'right': 1,'below': 0.1}
+        size_hint: .13, .07
+        background_color: 1, 1, 1, 0
+        on_release:
+            root.close()
+
+        Image:
+            source: "images/button_exit.png"
+            allow_stretch: False
+            keep_ratio: False
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+
+    Button:
+        text: "back"
+        size_hint: .13, .07
+        pos_hint: {'right': 0.13,'below': 1}
+        background_color: 1, 1, 1, 0
+        on_release:
+            root.manager.current = "page1"
+            root.manager.transition.direction = "right"
+
+        Image:
+            source: "images/button_back1.png"
+            allow_stretch: False
+            keep_ratio: False
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+    Button:
+        text: "Log Out"
+        bold: True
+        italic: True
+        pos_hint:{"x":0.9, "y": 0.9}
+        size_hint: 0.1, 0.1
+        color: 1, 0, 0
+        background_color: 1, 1, 1, 0
+        on_release:
+            app.root.current = "UI"
+            root.manager.transition.direction = "right"
+
+<CMD>:
+    name: "CMD"
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+        GridLayout:
+            cols: 1
+            spacing: 10
+            padding: ('10sp', '40sp', '10sp', '10sp')
+            size_hint: 1, None
+            height: self.minimum_height
+            Label:
+                markup: True
+                text: "Cassava  Mosaic  Disease"
+                size_hint: .2, .2
+                pos_hint: {'center_x': .5, 'center_y': .9}
+                font_name: 'linus.ttf'
+                font_size: '50sp'
+                background_color: 1, 1, 0, 1
+            Label:
+                markup: True
+                text: "\n\n\n[color=#00FF00][b][i] Cassava Mosaic Disease(CMD): [/b][/i][/color]Cassava mosaic virus is the common name used to refer to any of eleven different species of plant pathogenic virus in the genus Begomovirus. Three distinct species of circular single-stranded DNA viruses that are spread by whiteflies and primarily infect cassava plants are known as the African cassava mosaic virus (ACMV), East African cassava mosaic virus (EACMV), and South African cassava mosaic virus (SACMV). These viruses have only been found in Africa. Although cassava is grown throughout Latin America as well as Southeast Asia, related virus species (Indian cassava mosaic virus, ICMV, and Sri Lankan cassava mosaic virus, SLCMV) can be found there and on nearby islands. Due to the high rate of natural transformation linked to CMV, this number is likely to increase. \n\n [color=#00FF00][b][i]Hosts and symptoms: [/b][/i][/color]The fact that cassava is vegetatively propagated makes it particularly susceptible to viruses, and each year cassava geminiviruses cause significant economic damage. Systemic symptoms appear first once a cassava geminivirus infects cassava. These signs include leaf deformation, reduced development, and chlorotic mosaic of the leaves. Leaf stalks have a distinctive S-shaped form. The plant is capable of overcoming infection, particularly when symptoms appear suddenly. Plant death typically follows a gradual start to disease development. In addition to the usual impacts of host and pathogen features, Mollard (1987) demonstrated for the first time that soil fertility can influence symptomology.\n\n [color=#00FF00][b][i]Disease cycle: [/b][/i][/color]The whitefly Bemisia tabaci, vegetative replication utilizing cuttings from infected plants, and rarely mechanical techniques are the main sources of persistent transmission for cassava geminiviruses. Whiteflies typically need 3 hours of feeding time to acquire the virus, an 8-hour latent phase, and 10 minutes to infect the young leaves. After a 3-5 week latent phase, symptoms start to show. 48 hours after contracting the virus for the first time, adult whiteflies can still infect healthy plants. While only one sick whitefly is required to infect the host, more infected whiteflies feeding on the plant enhances the likelihood of successful transmission. The virus persists in the leaf cells for 8 days after entering the plant through the leaves. Being a single-stranded DNA virus, it must enter the leaf cells' nucleus in order to reproduce. Following this initial phase, the virus penetrates the phloem and moves to the stem's base before spreading to the branches.\n\n [color=#00FF00][b][i]Treatment: [/b][/i][/color]The common remedy of farmers when detecting disease, they will cut the diseased plants, or spray pesticides, etc...However, these are infectious virus strains, so it is not guaranteed that the disease will be eliminated. So call for help when the common ways are not feasible to how agricultural engineers, botanists, etc.\n\n"
+                multiline: True
+                size_hint_y: None
+                text_size: self.width - sp(10), None
+                height: self.texture_size[1]
+    Button:
+        text: "exit"
+        pos_hint: {'right': 1,'below': 0.1}
+        size_hint: .13, .07
+        background_color: 1, 1, 1, 0
+        on_release:
+            root.close()
+
+        Image:
+            source: "images/button_exit.png"
+            allow_stretch: False
+            keep_ratio: False
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+
+    Button:
+        text: "back"
+        size_hint: .13, .07
+        pos_hint: {'right': 0.13,'below': 1}
+        background_color: 1, 1, 1, 0
+        on_release:
+            root.manager.current = "page1"
+            root.manager.transition.direction = "right"
+
+        Image:
+            source: "images/button_back1.png"
+            allow_stretch: False
+            keep_ratio: False
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+
+    Button:
+        text: "Log Out"
+        bold: True
+        italic: True
+        pos_hint:{"x":0.9, "y": 0.9}
+        size_hint: 0.1, 0.1
+        color: 1, 0, 0
+        background_color: 1, 1, 1, 0
+        on_release:
+            app.root.current = "UI"
+            root.manager.transition.direction = "right"
+
+<Healthy>:
+    name: "Healthy"
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+        GridLayout:
+            cols: 1
+            spacing: 10
+            padding: ('10sp', '40sp', '10sp', '10sp')
+            size_hint: 1, None
+            height: self.minimum_height
+            Label:
+                markup: True
+                text: "Healthy"
+                size_hint: .2, .2
+                pos_hint: {'center_x': .5, 'center_y': .5}
+                font_name: 'linus.ttf'
+                font_size: '50sp'
+                background_color: 1, 1, 0, 1
+
+            Label:
+                markup: True
+                text: " "
+                multiline: True
+                size_hint_y: None
+                text_size: self.width - sp(10), None
+                height: self.texture_size[1]
+    Button:
+        text: "exit"
+        pos_hint: {'right': 1,'below': 0.1}
+        size_hint: .13, .07
+        background_color: 1, 1, 1, 0
+        on_release:
+            root.close()
+
+        Image:
+            source: "images/button_exit.png"
+            allow_stretch: False
+            keep_ratio: False
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+
+    Button:
+        text: "back"
+        size_hint: .13, .07
+        pos_hint: {'right': 0.13,'below': 1}
+        background_color: 1, 1, 1, 0
+        on_release:
+            root.manager.current = "page1"
+
+        Image:
+            source: "images/button_back1.png"
+            allow_stretch: False
+            keep_ratio: False
+            center_x: self.parent.center_x
+            center_y: self.parent.center_y
+
+    Button:
+        text: "Log Out"
+        bold: True
+        italic: True
+        pos_hint:{"x":0.9, "y": 0.9}
+        size_hint: 0.1, 0.1
+        color: 1, 0, 0
+        background_color: 1, 1, 1, 0
+        on_release:
+            app.root.current = "UI"
